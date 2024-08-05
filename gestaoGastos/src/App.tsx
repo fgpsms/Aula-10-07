@@ -10,6 +10,7 @@ return (
     <Routes>
       <Route path="/" element={<ControleGastos />} />
       <Route path="/todos" element={<Todos />} />
+      <Route path="/todos/todoId" element={<Todos />} />
       <Route path="/posts" element={<Posts />} />
     </Routes>
   </BrowserRouter>
