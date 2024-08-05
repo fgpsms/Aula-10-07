@@ -21,13 +21,15 @@ const Todos: React.FC = ( ) => {
     },[])
 
     const alteraStatus = (id:number) => {
-        setTodos(prevTodos => prevTodos.map((todo:Todo) => todo.id === id ? ({...todo, complete: !todo.complete}) : todo))
+        setTodos(prevTodos => prevTodos.map((todo:Todo) => 
+            todo.id === id ? ({...todo, complete: !todo.complete}) 
+        : todo))
   return (
     <div>
       <Header />
       <h2 className="mb-4">Lista de Todos{todoId && " - ID: ${todoId}"}</h2>
       <div>
-        {todos?.map((todo: Todo) => (
+        {todos?.sort((a: Todo) => a.complete ? -1 : 1).map((todo: Todo) => (
           <div
             key={todo.id}
             className={
