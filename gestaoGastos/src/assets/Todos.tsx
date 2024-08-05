@@ -19,17 +19,25 @@ const Todos: React.FC = ( ) => {
         axios("https://jsonplaceholder.com/todos").
         then((response) => setTodos(response.data))
     },[])
+
+    const alteraStatus = (id:number) => {
+        setTodos(prevTodos => prevTodos.map((todo:Todo) => todo.id === id ? ({...todo, complete: !todo.complete}) : todo))
   return (
     <div>
       <Header />
-      <h2>Lista de Todos{todoId && " - ID: ${todoId}"}</h2>
+      <h2 className="mb-4">Lista de Todos{todoId && " - ID: ${todoId}"}</h2>
       <div>
         {todos?.map((todo: Todo) => (
-          <div>
+          <div
+            key={todo.id}
+            className={
+              'border ${todo.complete ? "bg-green-200" : "bg-red-200"} p-3 flex flex-col'
+            }
+          >
             <h5>{todo.title}</h5>
             <span>ID:{todo.id}</span>
             <span>Usuario:{todo.userId}</span>
-            <span>{todo.complete ? "concluido" : "pendente"}</span>
+            <span onClick={()=>alteraStatus(todo.id)}>{todo.complete ? "concluido" : "pendente"}</span>
           </div>
         ))}
       </div>
