@@ -12,6 +12,7 @@ export const ListaTransacoes = ({
 }: ListarTransacoesProps) => {
   return (
     <div className="bg-slate-300 p-6 rounded-2xl flex flex-col gap-4">
+      <header></header>
       <h2 className="font-semibold text-2xl">Lista de Transações</h2>
       <ul className="flex gap-2 flex-col w-full gap-3">
         {transacoes?.map((transacao: Transacao) => (
