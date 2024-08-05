@@ -1,3 +1,5 @@
-O método para os números trocarem de cor em SaldoAtual.tsx eu fiz igual ao vídeo, porem no meu o que eu escrevi não virou um método
+A expressão para os números trocarem de cor em SaldoAtual.tsx com a interpolação de strings não funcionou
 
-ERRO DO: FormularioTransacao não está sendo importado para App.tsx RESOLVIDO
+A expressão para os números sumirem com o ID em Todos.tsx com a interpolação de strings não funcionou
+
+o $ não funciona como uma interpolação de strings
